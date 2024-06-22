@@ -28,3 +28,4 @@ D:\ASE\Enterprise-Application-development\UniversityStudentPerformanceTracker\Un
 D:\ASE\Enterprise-Application-development\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker\obj\Debug\net8.0\UniversityStudentPerformanceTracker.pdb
 D:\ASE\Enterprise-Application-development\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker\obj\Debug\net8.0\UniversityStudentPerformanceTracker.genruntimeconfig.cache
 D:\ASE\Enterprise-Application-development\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker\obj\Debug\net8.0\ref\UniversityStudentPerformanceTracker.dll
+D:\ASE\Enterprise-Application-development\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker\obj\Debug\net8.0\UniversityStudentPerformanceTracker.sourcelink.json
