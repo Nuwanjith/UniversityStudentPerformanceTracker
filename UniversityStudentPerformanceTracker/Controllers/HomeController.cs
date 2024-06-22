@@ -34,28 +34,41 @@ namespace UniversityStudentPerformanceTracker.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Login(string username, string password)
+        public async Task<IActionResult> Login(LoginViewModel model)
+{
+    if (ModelState.IsValid)
+    {
+        var user = InMemoryDatabase.Users.FirstOrDefault(u => u.Username == model.Username && u.Password == model.Password);
+        if (user != null)
         {
-            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-            if (user != null)
+            var claims = new List<Claim>
             {
-                var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.Username)
-                };
+                new Claim(ClaimTypes.Name, user.Username)
+                // Add more claims as needed
+            };
 
-                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+            var authProperties = new AuthenticationProperties
+            {
+                // Customize properties if needed
+            };
 
-                return RedirectToAction("Index");
-            }
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                authProperties);
 
-            ViewBag.ErrorMessage = "Invalid username or password";
-            return View();
+            return RedirectToAction("Index", "Home"); // Redirect to home page or desired page after login
         }
 
+        ModelState.AddModelError(string.Empty, "Invalid username or password");
+    }
+
+    // If we got this far, something failed; redisplay form with errors
+    return View(model);
+}        
+    
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
