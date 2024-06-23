@@ -34,6 +34,7 @@ namespace UniversityStudentPerformanceTracker.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
 {
     if (ModelState.IsValid)

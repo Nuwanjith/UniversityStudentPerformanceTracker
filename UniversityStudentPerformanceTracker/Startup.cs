@@ -1,18 +1,10 @@
-
-
-
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        })
+        services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
         {
             options.Cookie.Name = "YourAppCookieName";
