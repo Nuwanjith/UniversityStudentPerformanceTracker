@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\24062024_1\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
+      "projectUniqueName": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
       "projectName": "UniversityStudentPerformanceTracker",
-      "projectPath": "D:\\GIT\\24062024_1\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
+      "projectPath": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
       "packagesPath": "C:\\Users\\nuwanjiths\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\24062024_1\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\obj\\",
+      "outputPath": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nuwanjiths\\AppData\\Roaming\\NuGet\\NuGet.Config"
