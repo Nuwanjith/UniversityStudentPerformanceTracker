@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AEyxR5BmfDmDQqHFxdcfWanSfJZYEHBdJTPXo/YOfDw=",
+  "Hash": "P6bNScPOIXrEKwRU/LGujMeXtqnZIBOyW5T00ClSn/g=",
   "Source": "UniversityStudentPerformanceTracker",
   "BasePath": "_content/UniversityStudentPerformanceTracker",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\dashboard.jpg",
+      "SourceId": "UniversityStudentPerformanceTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\",
+      "BasePath": "_content/UniversityStudentPerformanceTracker",
+      "RelativePath": "images/dashboard.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dashboard.jpg"
     },
     {
       "Identity": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\image_2.jpg",

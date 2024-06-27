@@ -1,6 +1,7 @@
 @model UniversityStudentPerformanceTracker.Models.User
 @{
     ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
 }
 
 <h1>Welcome to the Dashboard, @User.Identity.Name!</h1>

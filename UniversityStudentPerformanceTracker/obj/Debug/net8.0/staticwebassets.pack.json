@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\dashboard.jpg",
+      "PackagePath": "staticwebassets\\images\\dashboard.jpg"
+    },
+    {
       "Id": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\image_2.jpg",
       "PackagePath": "staticwebassets\\images\\image_2.jpg"
     },
