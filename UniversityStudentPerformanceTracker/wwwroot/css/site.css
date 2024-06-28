@@ -30,3 +30,18 @@ body {
 .footer {
   margin-top: auto;
 }
+body {
+  background-image: url('/images/image_2.jpg'); /* Update the path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.8); /* Optional: To make the form stand out */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 100px auto;
+}

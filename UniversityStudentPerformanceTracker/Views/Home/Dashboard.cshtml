@@ -3,18 +3,13 @@
     ViewData["Title"] = "Dashboard";
     Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
 }
-
+<style>
+    body {
+        background-image: none !important;
+    }
+</style>
 <h1>Welcome to the Dashboard, @User.Identity.Name!</h1>
 
 <div>
     <p>Your user ID: @Model.UserId</p>
-
-
-    <div>
-        <a class="btn btn-primary" href="#">Home</a>
-        <a class="btn btn-primary" href="#">Study Sessions</a>
-        <a class="btn btn-primary" href="#">Breaks</a>
-        <a class="btn btn-primary" href="#">Reports</a>
-        <a class="btn btn-primary" href="#">Predictions</a>
-    </div>
 </div>
