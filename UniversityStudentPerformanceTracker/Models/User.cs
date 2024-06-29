@@ -7,5 +7,7 @@ namespace UniversityStudentPerformanceTracker.Models
         public string Password { get; set; } = string.Empty; // Initialize with default value
         public string Email { get; set; } = string.Empty;    // Initialize with default value
         public double CurrentKnowledgeLevel { get; set; }
+        public List<StudySession> StudySessions { get; set; }
+        public List<Break> Breaks { get; set; }
     }
 }

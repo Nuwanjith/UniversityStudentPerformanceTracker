@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\Ceylon Electricity Board - Payment Portal.pdf",
+      "PackagePath": "staticwebassets\\images\\Ceylon Electricity Board - Payment Portal.pdf"
+    },
+    {
+      "Id": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\Payment Receipt.pdf",
+      "PackagePath": "staticwebassets\\images\\Payment Receipt.pdf"
+    },
+    {
       "Id": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\dashboard.jpg",
       "PackagePath": "staticwebassets\\images\\dashboard.jpg"
     },

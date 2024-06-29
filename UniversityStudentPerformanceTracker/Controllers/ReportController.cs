@@ -8,11 +8,11 @@ namespace UniversityStudentPerformanceTracker.Controllers
 {
     public class ReportController : Controller
     {
-        private static List<StudySession> sessions = StudySessionController.sessions;
-        private static List<Break> breaks = BreakController.breaks;
-
         public IActionResult Generate(DateTime weekStartDate)
         {
+            var sessions = StudySessionController.Sessions;
+            var breaks = BreakController.Breaks;
+
             var weekEndDate = weekStartDate.AddDays(7);
             var weeklySessions = sessions.Where(s => s.Date >= weekStartDate && s.Date <= weekEndDate).ToList();
             var weeklyBreaks = breaks.Where(b => b.Date >= weekStartDate && b.Date <= weekEndDate).ToList();

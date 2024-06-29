@@ -8,8 +8,102 @@
         background-image: none !important;
     }
 </style>
+<style>
+    body {
+        background-color: #f0f0f0; /* Light gray background */
+        font-family: Arial, sans-serif; /* Choose a suitable font */
+        margin: 0;
+        padding: 0;
+    }
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff; /* White background for the dashboard */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow effect */
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #555;
+        margin-top: 20px;
+        border-bottom: 2px solid #ddd; /* Gray border bottom for section titles */
+        padding-bottom: 5px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: #007bff; /* Blue button color */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+</style>
+
 <h1>Welcome to the Dashboard, @User.Identity.Name!</h1>
 
 <div>
     <p>Your user ID: @Model.UserId</p>
+</div>
+
+<div>
+    <h2>Recent Study Sessions</h2>
+    <ul>
+        @foreach (var session in Model.StudySessions.OrderByDescending(s => s.Date).Take(5))
+        {
+            <li>@session.Subject on @session.Date: @session.Duration hours</li>
+        }
+    </ul>
+    <button onclick="location.href='@Url.Action("AddStudySession", "StudySession")'">Add Study Session</button>
+</div>
+
+<div>
+    <h2>Recent Breaks</h2>
+    <ul>
+        @foreach (var breakInfo in Model.Breaks.OrderByDescending(b => b.Date).Take(5))
+        {
+            <li>@breakInfo.Date: @breakInfo.Duration minutes</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <h2>Weekly View</h2>
+    <p>View your study and break schedule for the week:</p>
+    <!-- Implement a calendar or schedule component here -->
+</div>
+
+<div>
+    <h2>Performance Predictions</h2>
+    <p>Predicted Grades: [Logic to display predicted grades]</p>
+    <p>Predicted Knowledge Level: [Logic to display predicted knowledge level]</p>
+</div>
+
+<div>
+    <h2>Reports</h2>
+    <button onclick="location.href='@Url.Action("GenerateReport")'">Generate Weekly Report</button>
 </div>

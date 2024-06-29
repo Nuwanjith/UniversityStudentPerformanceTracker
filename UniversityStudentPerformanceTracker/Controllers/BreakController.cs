@@ -7,11 +7,11 @@ namespace UniversityStudentPerformanceTracker.Controllers
 {
     public class BreakController : Controller
     {
-        public static List<Break> breaks = new List<Break>(); // Change to public
+        public static List<Break> Breaks = new List<Break>(); // Changed to public static for accessibility
 
         public IActionResult Index()
         {
-            return View(breaks);
+            return View(Breaks);
         }
 
         public IActionResult Create()
@@ -22,20 +22,21 @@ namespace UniversityStudentPerformanceTracker.Controllers
         [HttpPost]
         public IActionResult Create(Break breakSession)
         {
-            breaks.Add(breakSession);
+            breakSession.BreakId = Breaks.Count > 0 ? Breaks.Max(b => b.BreakId) + 1 : 1; // Assign a new BreakId
+            Breaks.Add(breakSession);
             return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
         {
-            var breakSession = breaks.FirstOrDefault(b => b.BreakId == id);
+            var breakSession = Breaks.FirstOrDefault(b => b.BreakId == id);
             return View(breakSession);
         }
 
         [HttpPost]
         public IActionResult Edit(Break breakSession)
         {
-            var existingBreak = breaks.FirstOrDefault(b => b.BreakId == breakSession.BreakId);
+            var existingBreak = Breaks.FirstOrDefault(b => b.BreakId == breakSession.BreakId);
             if (existingBreak != null)
             {
                 existingBreak.Duration = breakSession.Duration;
@@ -48,17 +49,17 @@ namespace UniversityStudentPerformanceTracker.Controllers
 
         public IActionResult Delete(int id)
         {
-            var breakSession = breaks.FirstOrDefault(b => b.BreakId == id);
+            var breakSession = Breaks.FirstOrDefault(b => b.BreakId == id);
             return View(breakSession);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var breakSession = breaks.FirstOrDefault(b => b.BreakId == id);
+            var breakSession = Breaks.FirstOrDefault(b => b.BreakId == id);
             if (breakSession != null)
             {
-                breaks.Remove(breakSession);
+                Breaks.Remove(breakSession);
             }
             return RedirectToAction("Index");
         }

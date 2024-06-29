@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "P6bNScPOIXrEKwRU/LGujMeXtqnZIBOyW5T00ClSn/g=",
+  "Hash": "aQsx43v5HqZ7/pHegzgZjijNifgcQkKa38qfsNM+xus=",
   "Source": "UniversityStudentPerformanceTracker",
   "BasePath": "_content/UniversityStudentPerformanceTracker",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\Ceylon Electricity Board - Payment Portal.pdf",
+      "SourceId": "UniversityStudentPerformanceTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\",
+      "BasePath": "_content/UniversityStudentPerformanceTracker",
+      "RelativePath": "images/Ceylon Electricity Board - Payment Portal.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Ceylon Electricity Board - Payment Portal.pdf"
+    },
+    {
       "Identity": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\dashboard.jpg",
       "SourceId": "UniversityStudentPerformanceTracker",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\image_2.jpg"
+    },
+    {
+      "Identity": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\images\\Payment Receipt.pdf",
+      "SourceId": "UniversityStudentPerformanceTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\",
+      "BasePath": "_content/UniversityStudentPerformanceTracker",
+      "RelativePath": "images/Payment Receipt.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Payment Receipt.pdf"
     },
     {
       "Identity": "D:\\GIT\\26062024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\wwwroot\\js\\site.js",

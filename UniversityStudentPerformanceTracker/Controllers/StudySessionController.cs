@@ -7,11 +7,11 @@ namespace UniversityStudentPerformanceTracker.Controllers
 {
     public class StudySessionController : Controller
     {
-        public static List<StudySession> sessions = new List<StudySession>(); // Change to public
+        public static List<StudySession> Sessions = new List<StudySession>(); // Changed to public static for accessibility
 
         public IActionResult Index()
         {
-            return View(sessions);
+            return View(Sessions);
         }
 
         public IActionResult Create()
@@ -22,20 +22,21 @@ namespace UniversityStudentPerformanceTracker.Controllers
         [HttpPost]
         public IActionResult Create(StudySession session)
         {
-            sessions.Add(session);
+            session.SessionId = Sessions.Count > 0 ? Sessions.Max(s => s.SessionId) + 1 : 1; // Assign a new SessionId
+            Sessions.Add(session);
             return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
         {
-            var session = sessions.FirstOrDefault(s => s.SessionId == id);
+            var session = Sessions.FirstOrDefault(s => s.SessionId == id);
             return View(session);
         }
 
         [HttpPost]
         public IActionResult Edit(StudySession session)
         {
-            var existingSession = sessions.FirstOrDefault(s => s.SessionId == session.SessionId);
+            var existingSession = Sessions.FirstOrDefault(s => s.SessionId == session.SessionId);
             if (existingSession != null)
             {
                 existingSession.Subject = session.Subject;
@@ -49,17 +50,17 @@ namespace UniversityStudentPerformanceTracker.Controllers
 
         public IActionResult Delete(int id)
         {
-            var session = sessions.FirstOrDefault(s => s.SessionId == id);
+            var session = Sessions.FirstOrDefault(s => s.SessionId == id);
             return View(session);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var session = sessions.FirstOrDefault(s => s.SessionId == id);
+            var session = Sessions.FirstOrDefault(s => s.SessionId == id);
             if (session != null)
             {
-                sessions.Remove(session);
+                Sessions.Remove(session);
             }
             return RedirectToAction("Index");
         }
