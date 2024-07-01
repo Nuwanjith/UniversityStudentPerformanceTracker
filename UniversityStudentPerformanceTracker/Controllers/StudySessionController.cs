@@ -22,7 +22,7 @@ namespace UniversityStudentPerformanceTracker.Controllers
         [HttpPost]
         public IActionResult Create(StudySession session)
         {
-            session.SessionId = Sessions.Count > 0 ? Sessions.Max(s => s.SessionId) + 1 : 1; // Assign a new SessionId
+            session.SessionId = Sessions.Count > 0 ? Sessions.Max(s => s.SessionId) + 1 : 1; 
             Sessions.Add(session);
             return RedirectToAction("Index");
         }
