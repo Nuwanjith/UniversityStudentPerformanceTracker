@@ -1,0 +1,63 @@
+@model UniversityStudentPerformanceTracker.Models.ReportViewModel
+@{
+    ViewData["Title"] = "Reports";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+}
+<style>
+    body {
+        background-image: none !important;
+    }
+</style>
+    <div class="container mt-5">
+        <h1 class="mb-4">Weekly Study and Break Report</h1>
+        <h3>@Model.WeekStartDate.ToShortDateString() - @Model.WeekEndDate.ToShortDateString()</h3>
+        
+        <h4 class="mt-4">Study Sessions</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Duration (Hours)</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var session in Model.StudySessions)
+                {
+                    <tr>
+                        <td>@session.Date.ToShortDateString()</td>
+                        <td>@session.Subject</td>
+                        <td>@session.Duration</td>
+                        <td>@session.StartTime</td>
+                        <td>@session.EndTime</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h4 class="mt-4">Breaks</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Duration (Minutes)</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var brk in Model.Breaks)
+                {
+                    <tr>
+                        <td>@brk.Date.ToShortDateString()</td>
+                        <td>@brk.Duration</td>
+                        <td>@brk.StartTime</td>
+                        <td>@brk.EndTime</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
