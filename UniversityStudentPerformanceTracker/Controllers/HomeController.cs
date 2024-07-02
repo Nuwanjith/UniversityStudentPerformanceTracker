@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using UniversityStudentPerformanceTracker.Models;
-using System.Linq; // Include Linq for .FirstOrDefault()
+using System.Linq;
 
 namespace UniversityStudentPerformanceTracker.Controllers
 {
@@ -45,8 +45,8 @@ namespace UniversityStudentPerformanceTracker.Controllers
                 {
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, user.Username)
-                        // Add more claims as needed
+                        new Claim(ClaimTypes.Name, user.Username),
+                        new Claim("UserId", user.UserId.ToString())  // Add UserId claim
                     };
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
