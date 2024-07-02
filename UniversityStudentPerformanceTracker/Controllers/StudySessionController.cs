@@ -1,17 +1,35 @@
 using Microsoft.AspNetCore.Mvc;
-using UniversityStudentPerformanceTracker.Models;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using System.Linq;
+using UniversityStudentPerformanceTracker.Models;
 
 namespace UniversityStudentPerformanceTracker.Controllers
 {
+    [Authorize]
     public class StudySessionController : Controller
     {
-        public static List<StudySession> Sessions = new List<StudySession>(); // Changed to public static for accessibility
-
         public IActionResult Index()
         {
-            return View(Sessions);
+            // Retrieve the authenticated user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+            if (userIdClaim == null)
+            {
+                // Handle the case where the UserId claim is not found
+                return Unauthorized();
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+
+            if (user == null)
+            {
+                // Handle the case where the user is not found in the in-memory database
+                return NotFound();
+            }
+
+            var sessions = user.StudySessions;
+
+            return View(sessions);
         }
 
         public IActionResult Create()
@@ -22,21 +40,63 @@ namespace UniversityStudentPerformanceTracker.Controllers
         [HttpPost]
         public IActionResult Create(StudySession session)
         {
-            session.SessionId = Sessions.Count > 0 ? Sessions.Max(s => s.SessionId) + 1 : 1; 
-            Sessions.Add(session);
+            // Retrieve the authenticated user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+            if (userIdClaim == null)
+            {
+                // Handle the case where the UserId claim is not found
+                return Unauthorized();
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+
+            if (user != null)
+            {
+                session.SessionId = user.StudySessions.Count > 0 ? user.StudySessions.Max(s => s.SessionId) + 1 : 1;
+                session.UserId = userId;
+                user.StudySessions.Add(session);
+            }
             return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
         {
-            var session = Sessions.FirstOrDefault(s => s.SessionId == id);
+            // Retrieve the authenticated user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+            if (userIdClaim == null)
+            {
+                // Handle the case where the UserId claim is not found
+                return Unauthorized();
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var session = user.StudySessions.FirstOrDefault(s => s.SessionId == id);
             return View(session);
         }
 
         [HttpPost]
         public IActionResult Edit(StudySession session)
         {
-            var existingSession = Sessions.FirstOrDefault(s => s.SessionId == session.SessionId);
+            // Retrieve the authenticated user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+            if (userIdClaim == null)
+            {
+                // Handle the case where the UserId claim is not found
+                return Unauthorized();
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+            var existingSession = user?.StudySessions.FirstOrDefault(s => s.SessionId == session.SessionId);
+
             if (existingSession != null)
             {
                 existingSession.Subject = session.Subject;
@@ -50,17 +110,47 @@ namespace UniversityStudentPerformanceTracker.Controllers
 
         public IActionResult Delete(int id)
         {
-            var session = Sessions.FirstOrDefault(s => s.SessionId == id);
+            // Retrieve the authenticated user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+            if (userIdClaim == null)
+            {
+                // Handle the case where the UserId claim is not found
+                return Unauthorized();
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var session = user.StudySessions.FirstOrDefault(s => s.SessionId == id);
             return View(session);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var session = Sessions.FirstOrDefault(s => s.SessionId == id);
-            if (session != null)
+            // Retrieve the authenticated user's ID from the claims
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+            if (userIdClaim == null)
             {
-                Sessions.Remove(session);
+                // Handle the case where the UserId claim is not found
+                return Unauthorized();
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+
+            if (user != null)
+            {
+                var session = user.StudySessions.FirstOrDefault(s => s.SessionId == id);
+                if (session != null)
+                {
+                    user.StudySessions.Remove(session);
+                }
             }
             return RedirectToAction("Index");
         }

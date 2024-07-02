@@ -1,14 +1,111 @@
 @model IEnumerable<UniversityStudentPerformanceTracker.Models.StudySession>
+@{
+    ViewData["Title"] = "Study Sessions";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+}
+<style>
+    body {
+        background-color: #f0f0f0; /* Light gray background */
+        font-family: Arial, sans-serif; /* Choose a suitable font */
+        margin: 0;
+        padding: 0;
+        background-image: none !important;
+    }
 
-<h2>Study Sessions</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Subject</th>
-            <th>Duration</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Date</th>
-        </tr>
-    </thead>
-    <tbody>
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff; /* White background for the dashboard */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow effect */
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #555;
+        margin-top: 20px;
+        border-bottom: 2px solid #ddd; /* Gray border bottom for section titles */
+        padding-bottom: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    button {
+        background-color: #007bff; /* Blue button color */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+</style>
+
+<div class="dashboard-container">
+    <h1>Study Sessions</h1>
+
+    <div>
+        <h2>All Study Sessions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Duration (Minutes)</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var session in Model.OrderByDescending(s => s.Date))
+                {
+                    <tr>
+                        <td>@session.Date.ToShortDateString()</td>
+                        <td>@session.Subject</td>
+                        <td>@session.Duration</td>
+                        <td>@session.StartTime.ToShortTimeString()</td>
+                        <td>@session.EndTime.ToShortTimeString()</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "StudySession", new { id = session.SessionId })" class="btn btn-primary">Edit</a>
+                            <a href="@Url.Action("Delete", "StudySession", new { id = session.SessionId })" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button onclick="location.href='@Url.Action("Create", "StudySession")'">Add Study Session</button>
+    </div>
+</div>
