@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GIT\26062024\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/GIT/26062024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT/26062024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT/26062024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GIT/26062024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

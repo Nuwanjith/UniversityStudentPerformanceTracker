@@ -1,0 +1,34 @@
+@model UniversityStudentPerformanceTracker.Models.Break
+
+@{
+    ViewData["Title"] = "Edit Breaks";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+}
+
+<div class="dashboard-container">
+    <h1>Edit Break Session</h1>
+
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="BreakId" />
+
+        <div class="form-group">
+            <label asp-for="Date">Date:</label>
+            <input asp-for="Date" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="StartTime">Start Time:</label>
+            <input asp-for="StartTime" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="EndTime">End Time:</label>
+            <input asp-for="EndTime" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Duration">Duration (Minutes):</label>
+            <input asp-for="Duration" class="form-control" />
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
