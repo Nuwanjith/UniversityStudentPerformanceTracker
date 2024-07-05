@@ -7,7 +7,7 @@ namespace UniversityStudentPerformanceTracker.Models
     {
         public DateTime WeekStartDate { get; set; }
         public DateTime WeekEndDate { get; set; }
-        public List<StudySession> StudySessions { get; set; } = new List<StudySession>(); // Initialize with default value
-        public List<Break> Breaks { get; set; } = new List<Break>(); // Initialize with default value
+        public List<StudySession> StudySessions { get; set; }
+        public List<Break> Breaks { get; set; }
     }
 }

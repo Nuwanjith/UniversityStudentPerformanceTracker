@@ -1,24 +1,33 @@
 @model UniversityStudentPerformanceTracker.Models.ReportViewModel
 @{
-    ViewData["Title"] = "Reports";
+    ViewData["Title"] = "Weekly Report";
     Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
 }
-<style>
-    body {
-        background-image: none !important;
-    }
-</style>
-    <div class="container mt-5">
-        <h1 class="mb-4">Weekly Study and Break Report</h1>
-        <h3>@Model.WeekStartDate.ToShortDateString() - @Model.WeekEndDate.ToShortDateString()</h3>
-        
-        <h4 class="mt-4">Study Sessions</h4>
-        <table class="table table-bordered">
+
+<div class="dashboard-container">
+    <h1>Weekly Report</h1>
+
+    <form asp-action="Generate" method="get">
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" name="startDate" class="form-control" value="@Model.WeekStartDate.ToString("yyyy-MM-dd")" required />
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate" name="endDate" class="form-control" value="@Model.WeekEndDate.ToString("yyyy-MM-dd")" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <h2>Study Sessions from @Model.WeekStartDate.ToShortDateString() to @Model.WeekEndDate.ToShortDateString()</h2>
+    @if (Model.StudySessions != null && Model.StudySessions.Any())
+    {
+        <table class="table">
             <thead>
                 <tr>
                     <th>Date</th>
                     <th>Subject</th>
-                    <th>Duration (Hours)</th>
+                    <th>Duration (Minutes)</th>
                     <th>Start Time</th>
                     <th>End Time</th>
                 </tr>
@@ -30,34 +39,45 @@
                         <td>@session.Date.ToShortDateString()</td>
                         <td>@session.Subject</td>
                         <td>@session.Duration</td>
-                        <td>@session.StartTime</td>
-                        <td>@session.EndTime</td>
+                        <td>@session.StartTime.ToShortTimeString()</td>
+                        <td>@session.EndTime.ToShortTimeString()</td>
                     </tr>
                 }
             </tbody>
         </table>
+    }
+    else
+    {
+        <p>No study sessions found for the selected time frame.</p>
+    }
 
-        <h4 class="mt-4">Breaks</h4>
-        <table class="table table-bordered">
+    <h2>Breaks from @Model.WeekStartDate.ToShortDateString() to @Model.WeekEndDate.ToShortDateString()</h2>
+    @if (Model.Breaks != null && Model.Breaks.Any())
+    {
+        <table class="table">
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Duration (Minutes)</th>
                     <th>Start Time</th>
                     <th>End Time</th>
+                    <th>Duration (Minutes)</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var brk in Model.Breaks)
+                @foreach (var breakSession in Model.Breaks)
                 {
                     <tr>
-                        <td>@brk.Date.ToShortDateString()</td>
-                        <td>@brk.Duration</td>
-                        <td>@brk.StartTime</td>
-                        <td>@brk.EndTime</td>
+                        <td>@breakSession.StartTime.ToShortDateString()</td>
+                        <td>@breakSession.StartTime.ToShortTimeString()</td>
+                        <td>@breakSession.EndTime.ToShortTimeString()</td>
+                        <td>@breakSession.Duration</td>
                     </tr>
                 }
             </tbody>
         </table>
-    </div>
-
+    }
+    else
+    {
+        <p>No breaks found for the selected time frame.</p>
+    }
+</div>

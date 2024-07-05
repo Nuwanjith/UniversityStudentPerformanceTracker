@@ -8,11 +8,29 @@ namespace UniversityStudentPerformanceTracker.Controllers
     public class BreakController : Controller
     {
         public static List<Break> Breaks = new List<Break>(); // Changed to public static for accessibility
-
-        public IActionResult Index()
+    public IActionResult Index()
+    {
+        // Retrieve the authenticated user's ID from the claims
+        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
+        if (userIdClaim == null)
         {
-            return View(Breaks);
+            // Handle the case where the UserId claim is not found
+            return Unauthorized();
         }
+
+        int userId = int.Parse(userIdClaim.Value);
+        var user = InMemoryDatabase.Users.FirstOrDefault(u => u.UserId == userId);
+
+        if (user == null)
+        {
+            // Handle the case where the user is not found in the in-memory database
+            return NotFound();
+        }
+
+        var breaks = user.Breaks;
+
+        return View(breaks);
+    }
 
         public IActionResult Create()
         {

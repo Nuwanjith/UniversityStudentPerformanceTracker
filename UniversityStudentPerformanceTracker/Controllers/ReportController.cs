@@ -7,7 +7,7 @@ namespace UniversityStudentPerformanceTracker.Controllers
 {
     public class ReportController : Controller
     {
-        public IActionResult Generate(DateTime weekStartDate)
+        public IActionResult Generate(DateTime startDate, DateTime endDate)
         {
             // Retrieve the authenticated user's ID from the claims
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
@@ -26,16 +26,21 @@ namespace UniversityStudentPerformanceTracker.Controllers
                 return NotFound();
             }
 
-            var weekEndDate = weekStartDate.AddDays(7);
-            var weeklySessions = user.StudySessions.Where(s => s.Date >= weekStartDate && s.Date <= weekEndDate).ToList();
-            var weeklyBreaks = user.Breaks.Where(b => b.StartTime >= weekStartDate && b.EndTime <= weekEndDate).ToList();
+            // Ensure sessions and breaks are not null
+            var filteredSessions = user.StudySessions?
+                .Where(s => s.Date >= startDate && s.Date <= endDate)
+                .ToList() ?? new List<StudySession>();
+
+            var filteredBreaks = user.Breaks?
+                .Where(b => b.StartTime >= startDate && b.EndTime <= endDate)
+                .ToList() ?? new List<Break>();
 
             var reportViewModel = new ReportViewModel
             {
-                WeekStartDate = weekStartDate,
-                WeekEndDate = weekEndDate,
-                StudySessions = weeklySessions,
-                Breaks = weeklyBreaks
+                WeekStartDate = startDate,
+                WeekEndDate = endDate,
+                StudySessions = filteredSessions,
+                Breaks = filteredBreaks
             };
 
             return View(reportViewModel);
