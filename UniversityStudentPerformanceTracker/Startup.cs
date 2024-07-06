@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using UniversityStudentPerformanceTracker.Controllers;
 
 public class Startup
 {
@@ -16,6 +17,7 @@ public class Startup
         });
     
         services.AddControllersWithViews();
+        services.AddSingleton<GradePredictionController>();
         // Add other services as needed
     }
 
