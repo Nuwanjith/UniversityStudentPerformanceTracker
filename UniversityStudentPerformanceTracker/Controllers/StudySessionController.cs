@@ -8,14 +8,6 @@ namespace UniversityStudentPerformanceTracker.Controllers
     [Authorize]
     public class StudySessionController : Controller
     {   
-        private readonly GradePrediction _gradePredictor;
-
-        public StudySessionController(GradePrediction gradePredictor)
-        {
-            _gradePredictor = gradePredictor;
-        }
-
-
         public IActionResult Index()
         {
             // Retrieve the authenticated user's ID from the claims

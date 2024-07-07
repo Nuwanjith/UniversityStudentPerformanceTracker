@@ -7,6 +7,6 @@ public class LoginViewModel
     public LoginViewModel()
     {
         Username = string.Empty; // or provide a default value
-        Password = string.Empty; // or provide a default value
+        Password = string.Empty; 
     }
 }
