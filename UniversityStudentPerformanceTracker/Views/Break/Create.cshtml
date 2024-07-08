@@ -8,7 +8,7 @@
 <div class="dashboard-container">
     <h1>Create Break Session</h1>
 
-    <form asp-action="Create">
+    <form asp-controller="Break" asp-action="CreateBreak" method="post">
         <div class="form-group">
             <label asp-for="Date">Date:</label>
             <input asp-for="Date" class="form-control" />

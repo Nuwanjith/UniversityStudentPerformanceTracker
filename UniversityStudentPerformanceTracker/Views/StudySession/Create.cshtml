@@ -12,7 +12,7 @@
 
 <h2>Add Study Session</h2>
 
-<form asp-action="AddStudySession" method="post">
+<form asp-controller="StudySession" asp-action="CreateSession" method="post">
     <div class="form-group">
         <label asp-for="Subject" class="control-label"></label>
         <input asp-for="Subject" class="form-control" />

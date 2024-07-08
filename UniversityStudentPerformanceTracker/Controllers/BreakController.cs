@@ -37,13 +37,24 @@ namespace UniversityStudentPerformanceTracker.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Create(Break breakSession)
-        {
-            breakSession.BreakId = Breaks.Count > 0 ? Breaks.Max(b => b.BreakId) + 1 : 1; // Assign a new BreakId
-            Breaks.Add(breakSession);
-            return RedirectToAction("Index");
-        }
+[HttpPost]
+public IActionResult CreateBreak(Break breakSession)
+{
+    // Example initialization of Breaks if not already done
+    if (Breaks == null)
+    {
+        Breaks = new List<Break>();
+    }
+
+    // Assign a new BreakId
+    breakSession.BreakId = Breaks.Count > 0 ? Breaks.Max(b => b.BreakId) + 1 : 1;
+
+    // Add the new Break to the collection
+    Breaks.Add(breakSession);
+
+    // Redirect to the Index action method of the current controller
+    return RedirectToAction("Index");
+}
 
         public IActionResult Edit(int id)
         {

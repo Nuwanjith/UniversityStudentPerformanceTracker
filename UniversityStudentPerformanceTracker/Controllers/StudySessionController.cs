@@ -38,13 +38,13 @@ namespace UniversityStudentPerformanceTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(StudySession session)
+        public IActionResult CreateSession(StudySession session)
         {
             // Retrieve the authenticated user's ID from the claims
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "UserId");
             if (userIdClaim == null)
             {
-                // Handle the case where the UserId claim is not found
+                
                 return Unauthorized();
             }
 
@@ -129,6 +129,17 @@ namespace UniversityStudentPerformanceTracker.Controllers
             var session = user.StudySessions.FirstOrDefault(s => s.SessionId == id);
             return View(session);
         }
+        [HttpPost]
+
+        public IActionResult AddSuccess()
+        {
+            return View();
+        }
+        
+
+
+
+
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
