@@ -1,5 +1,6 @@
 namespace UniversityStudentPerformanceTracker.Models
 {
+    [Serializable]
     public class User
     {
         public int UserId { get; set; }

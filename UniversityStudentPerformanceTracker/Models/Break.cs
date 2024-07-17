@@ -1,5 +1,7 @@
 namespace UniversityStudentPerformanceTracker.Models
+
 {
+    [Serializable]
     public class Break
     {
         public int BreakId { get; set; }

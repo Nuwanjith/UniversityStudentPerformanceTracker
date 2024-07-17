@@ -1,13 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
-using UniversityStudentPerformanceTracker.Models;
 using System.Collections.Generic;
 using System.Linq;
+using UniversityStudentPerformanceTracker.Models;
+using UniversityStudentPerformanceTrackerApi.Services;
 
 namespace UniversityStudentPerformanceTracker.Controllers
 {
     public class UserController : Controller
     {
-        private static List<User> users = new List<User>();
+        private readonly XMLStorageService _xmlStorageService;
+        private static string usersFilePath = "path/to/users.xml"; // Define the path to the XML file
+
+        public UserController(XMLStorageService xmlStorageService)
+        {
+            _xmlStorageService = xmlStorageService;
+        }
 
         public IActionResult Register()
         {
@@ -17,7 +24,10 @@ namespace UniversityStudentPerformanceTracker.Controllers
         [HttpPost]
         public IActionResult Register(User user)
         {
+            var users = _xmlStorageService.LoadData<User>(usersFilePath);
             users.Add(user);
+            _xmlStorageService.SaveData(usersFilePath, users);
+
             return RedirectToAction("Login");
         }
 
@@ -29,6 +39,7 @@ namespace UniversityStudentPerformanceTracker.Controllers
         [HttpPost]
         public IActionResult Login(User user)
         {
+            var users = _xmlStorageService.LoadData<User>(usersFilePath);
             var existingUser = users.FirstOrDefault(u => u.Username == user.Username && u.Password == user.Password);
             if (existingUser != null)
             {
