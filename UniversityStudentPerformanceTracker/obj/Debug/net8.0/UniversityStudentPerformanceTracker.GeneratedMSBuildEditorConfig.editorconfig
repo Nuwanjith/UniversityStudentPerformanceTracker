@@ -9,99 +9,99 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UniversityStudentPerformanceTracker
 build_property.RootNamespace = UniversityStudentPerformanceTracker
-build_property.ProjectDir = D:\GIT\17072024\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker\
+build_property.ProjectDir = D:\GIT\26072024\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\GIT\17072024\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker
+build_property.MSBuildProjectDirectory = D:\GIT\26072024\UniversityStudentPerformanceTracker\UniversityStudentPerformanceTracker
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Create.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Delete.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Edit.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Index.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Break/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJlYWtcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/GradePrediction/PredictGrade.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/GradePrediction/PredictGrade.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhZGVQcmVkaWN0aW9uXFByZWRpY3RHcmFkZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Dashboard.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Index.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Login.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Privacy.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Report/Generate.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Report/Generate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEdlbmVyYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/Error.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_LayoutAfterLogin.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_LayoutAfterLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZnRlckxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_LayoutBeforeLogin.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_LayoutBeforeLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCZWZvcmVMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/AddSuccess.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/AddSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZHlTZXNzaW9uXEFkZFN1Y2Nlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Create.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZHlTZXNzaW9uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Delete.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZHlTZXNzaW9uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Edit.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZHlTZXNzaW9uXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Index.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/StudySession/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZHlTZXNzaW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/_ViewImports.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/_ViewStart.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/GIT/17072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_Layout.cshtml]
+[D:/GIT/26072024/UniversityStudentPerformanceTracker/UniversityStudentPerformanceTracker/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4jibw40kri

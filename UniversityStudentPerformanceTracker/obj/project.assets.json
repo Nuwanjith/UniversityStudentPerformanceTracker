@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\17072024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
+      "projectUniqueName": "D:\\GIT\\26072024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
       "projectName": "UniversityStudentPerformanceTracker",
-      "projectPath": "D:\\GIT\\17072024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
+      "projectPath": "D:\\GIT\\26072024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker.csproj",
       "packagesPath": "C:\\Users\\nuwanjiths\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\17072024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\obj\\",
+      "outputPath": "D:\\GIT\\26072024\\UniversityStudentPerformanceTracker\\UniversityStudentPerformanceTracker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nuwanjiths\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,6 +25,9 @@
       "originalTargetFrameworks": [
         "net8.0"
       ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
