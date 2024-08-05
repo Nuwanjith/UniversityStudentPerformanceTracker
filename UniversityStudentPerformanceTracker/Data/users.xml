@@ -30,7 +30,9 @@
         <UserId>1</UserId>
         <Description>Short break</Description>
         <StartTime>2024-07-20T13:00:00</StartTime>
+		<Duration>10</Duration>
         <EndTime>2024-07-20T13:10:00</EndTime>
+		<Date>2024-07-20</Date>
       </Break>
       <Break>
         <BreakId>2</BreakId>
@@ -38,6 +40,8 @@
         <Description>Lunch break</Description>
         <StartTime>2024-07-19T12:00:00</StartTime>
         <EndTime>2024-07-19T13:00:00</EndTime>
+		<Duration>60</Duration>
+		<Date>2024-07-19</Date>
       </Break>
     </Breaks>
   </User>

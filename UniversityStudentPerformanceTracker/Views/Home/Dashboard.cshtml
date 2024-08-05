@@ -5,13 +5,8 @@
 }
 <style>
     body {
-        background-image: none !important;
-    }
-</style>
-<style>
-    body {
-        background-color: #f0f0f0; /* Light gray background */
-        font-family: Arial, sans-serif; /* Choose a suitable font */
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
     }
@@ -19,10 +14,10 @@
     .dashboard-container {
         max-width: 800px;
         margin: 20px auto;
-        background-color: #fff; /* White background for the dashboard */
+        background-color: #fff;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow effect */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
@@ -35,7 +30,7 @@
         font-size: 24px;
         color: #555;
         margin-top: 20px;
-        border-bottom: 2px solid #ddd; /* Gray border bottom for section titles */
+        border-bottom: 2px solid #ddd;
         padding-bottom: 5px;
     }
 
@@ -49,7 +44,7 @@
     }
 
     button {
-        background-color: #007bff; /* Blue button color */
+        background-color: #007bff;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -60,50 +55,61 @@
     }
 
     button:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+        background-color: #0056b3;
     }
 </style>
 
 <h1>Welcome to the Dashboard, @User.Identity.Name!</h1>
 
-<div>
-    <p>Your user ID: @Model.UserId</p>
-</div>
+<div class="dashboard-container">
+    <div>
+        <p>Your user ID: @Model.UserId</p>
+    </div>
 
-<div>
-    <h2>Recent Study Sessions</h2>
-    <ul>
-        @foreach (var session in Model.StudySessions.OrderByDescending(s => s.Date).Take(5))
-        {
-            <li>@session.Subject on @session.Date: @session.Duration hours</li>
-        }
-    </ul>
-    <button onclick="location.href='@Url.Action("Create", "StudySession")'">Add Study Session</button>
-</div>
+    <div>
+        <h2>Recent Study Sessions</h2>
+        <ul>
+            @foreach (var session in Model.StudySessions.OrderByDescending(s => s.Date).Take(5))
+            {
+                <li>@session.Subject on @session.Date.ToShortDateString(): @session.Duration minutes</li>
+            }
+        </ul>
+        <button onclick="location.href='@Url.Action("Create", "StudySession")'">Add Study Session</button>
+    </div>
 
-<div>
-    <h2>Recent Breaks</h2>
-    <ul>
-        @foreach (var breakInfo in Model.Breaks.OrderByDescending(b => b.Date).Take(5))
-        {
-            <li>@breakInfo.Date: @breakInfo.Duration minutes</li>
-        }
-    </ul>
-</div>
+    <div>
+        <h2>Recent Breaks</h2>
+        <ul>
+            @foreach (var breakInfo in Model.Breaks.Where(b => b.UserId == Model.UserId).OrderByDescending(b => b.Date).Take(5))
+            {
+                <li>@breakInfo.Description on @breakInfo.Date.ToShortDateString(): @breakInfo.Duration minutes</li>
+            }
+        </ul>
+    </div>
 
-<div>
-    <h2>Weekly View</h2>
-    <p>View your study and break schedule for the week:</p>
-    <!-- Implement a calendar or schedule component here -->
-</div>
+    <div>
+        <h2>Weekly View</h2>
+        <p>View your study and break schedule for the week:</p>
+        <!-- Weekly schedule logic can be implemented here -->
+    </div>
 
-<div>
-    <h2>Performance Predictions</h2>
-    <p>Predicted Grades: [Logic to display predicted grades]</p>
-    <p>Predicted Knowledge Level: [Logic to display predicted knowledge level]</p>
-</div>
+    <div>
+        <h2>Performance Predictions</h2>
+        <p>
+            Predicted Grades: 
+            @foreach (var subject in Model.StudySessions.Select(s => s.Subject).Distinct())
+            {
+                var gradePredictor = new UniversityStudentPerformanceTracker.Models.GradePredictor();
+                var futureStudyHours = 10; // Example value, replace with actual logic
+                var predictedGrade = gradePredictor.CalculatePredictedGrade(subject, futureStudyHours);
 
-<div>
-    <h2>Reports</h2>
-    <button onclick="location.href='@Url.Action("GenerateReport")'">Generate Weekly Report</button>
+                <span>@subject: @predictedGrade</span><br />
+            }
+        </p>
+    </div>
+
+    <div>
+        <h2>Reports</h2>
+        <button onclick="location.href='@Url.Action("Generate", "Report")'">Generate Weekly Report</button>
+    </div>
 </div>
